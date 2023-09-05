@@ -53,7 +53,7 @@ def pasirinkti():
 
         receptu_langas = tk.Toplevel(langas)
         receptu_langas.title("Pasirinkti patiekalai")
-        receptu_langas.geometry("800x400")
+        receptu_langas.geometry("800x200")
 
         listas = tk.Listbox(receptu_langas, width=80, height=10, font=("Arial", 14))
         listas.pack()
