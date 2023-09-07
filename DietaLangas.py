@@ -6,6 +6,8 @@ from PIL import Image, ImageTk
 import requests
 
 # Funkcijos ištraukti duomenys iš duomenų bazės
+
+
 def duomenys():
     conn = sqlite3.connect('Receptai.db')
     cursor = conn.cursor()
@@ -13,6 +15,7 @@ def duomenys():
     options = cursor.fetchall()
     conn.close()
     return options
+
 
 def receptai(recepto_pav):
     conn = sqlite3.connect('Receptai.db')
@@ -34,6 +37,8 @@ def alergijos():
     return options
 
 # Atnaujinti listboxą
+
+
 def atnaujinti(recipes):
     listas.delete(0, tk.END)
     for i, receptas in enumerate(recipes):
@@ -41,6 +46,8 @@ def atnaujinti(recipes):
         listas.insert(tk.END, f"{recepto_pav} - {receptas[1]} min")
 
 # Ijungti receptą ant jo du kartus paspaudus
+
+
 def parodyti_recepta(event):
     def paveiksliukas(image_url):
         try:
@@ -81,6 +88,8 @@ def parodyti_recepta(event):
         text_widget.config(yscrollcommand=scrollbar.set)
 
 # Funkcijos parodančius receptus pagal pasirinktus checkboxus
+
+
 def parodyti():
     global recipes
     pasirinkta_dieta = [options[i][0] for i, var in enumerate(option_vars) if var.get()]
@@ -109,6 +118,7 @@ def parodyti():
         else:
             pasirinktas_t.set("")
             atnaujinti(recipes)
+
 
 def pasirinkti_alergijas():
     global recipes
@@ -140,6 +150,7 @@ def pasirinkti_alergijas():
         else:
             pasirinktas_t_alergijos.set("")
             atnaujinti(recipes)
+
 
 def pasirinkti_abu():
     global recipes
@@ -179,9 +190,10 @@ def pasirinkti_abu():
             atnaujinti(recipes)
 
 # Langas, migtukai, checkboxai, labels, listboxas
+
+
 langas = tk.Tk()
 langas.title("Pasirinkite patiekalą")
-
 image = Image.open('pics/ingredients.jpg')
 photo = ImageTk.PhotoImage(image)
 background_label = tk.Label(langas, image=photo)
