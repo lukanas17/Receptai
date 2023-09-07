@@ -31,6 +31,7 @@ def alergijas():
 
 
 def visi():
+    langas.destroy()
     import VisiLangas
 
 # Pakeisti spalvą užėjus ant migtuko ir nuėjus

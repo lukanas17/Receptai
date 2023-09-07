@@ -60,7 +60,7 @@ def parodyti_recepta(recepto_pav):
 
         isokantis = tk.Toplevel(langas)
         isokantis.title("Recepto Informacija")
-        isokantis.geometry("1030x450")
+        isokantis.geometry("1150x450")
 
         frame = tk.Frame(isokantis)
         frame.pack(fill=tk.BOTH, expand=True)
@@ -70,14 +70,13 @@ def parodyti_recepta(recepto_pav):
         text_widget.grid(row=0, column=0, padx=10, pady=10, sticky="nsew")
 
         details_text = f"Pavadinimas: {pavadinimas}\nParuošimo laikas: {paruosimo_laikas} min\n" \
-                       f"Porcijos dydis: {porcijos}\nIngredientai:\n {ingredientai}\nInstrukcija:\n {instrukcija}"
+                       f"Porcijos dydis: {porcijos}\nIngredientai:\n {ingredientai}\n\nInstrukcija:\n\n {instrukcija}"
         text_widget.insert(tk.END, details_text)
         text_widget.tag_configure("bold", font=(fontas.actual("family"), fontas.actual("size"), "bold"))
         text_widget.tag_add("bold", "1.0", "1.13")
         text_widget.tag_add("bold", "2.0", "2.17")
         text_widget.tag_add("bold", "3.0", "3.15")
         text_widget.tag_add("bold", "4.0", "4.16")
-        text_widget.tag_add("bold", "15.0", "15.15")
         scrollbar = tk.Scrollbar(frame, command=text_widget.yview)
         scrollbar.grid(row=0, column=1, sticky='nsew')
         text_widget.config(yscrollcommand=scrollbar.set)

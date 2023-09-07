@@ -56,14 +56,13 @@ def parodyti(event):
             text_widget.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
             paveiksliukas(nuotrauka)
             details_text = f"Pavadinimas: {pavadinimas}\nParuošimo laikas: {paruosimo_laikas}min\n" \
-                           f"Porcijos dydis: {porcijos}\nIngredientai:\n {ingredientai}\nInstrukcija:\n {instrukcija}"
+                           f"Porcijos dydis: {porcijos}\nIngredientai:\n {ingredientai}\n\nInstrukcija:\n\n {instrukcija}"
             text_widget.insert(tk.END, details_text)
             text_widget.tag_configure("bold", font=(fontas.actual("family"), fontas.actual("size"), "bold"))
             text_widget.tag_add("bold", "1.0", "1.13")
             text_widget.tag_add("bold", "2.0", "2.17")
             text_widget.tag_add("bold", "3.0", "3.15")
             text_widget.tag_add("bold", "4.0", "4.16")
-            text_widget.tag_add("bold", "15.0", "15.15")
             scrollbar = tk.Scrollbar(isokantis, command=text_widget.yview)
             scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
             text_widget.config(yscrollcommand=scrollbar.set)
